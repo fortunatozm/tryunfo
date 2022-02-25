@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 class Input extends React.Component {
   render() {
     const { data: { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-    cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, onInputChange,
-    onSaveButtonClick } } = this.props;
+      cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, onInputChange,
+      onSaveButtonClick } } = this.props;
     // console.log(cardName);
 
     return (
