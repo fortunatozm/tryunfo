@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Input extends React.Component {
   render() {
     const { data: { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3,
-    cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, onInputChange,
+    cardImage, cardRare, cardTrunfo, isSaveButtonDisabled, onInputChange,
     onSaveButtonClick } } = this.props;
     // console.log(cardName);
 
@@ -24,6 +25,7 @@ class Input extends React.Component {
           <input
             type="textarea"
             data-testid="description-input"
+            value={ cardDescription }
           />
         </lebel>
         <br />
@@ -32,6 +34,7 @@ class Input extends React.Component {
           <input
             type="number"
             data-testid="attr1-input"
+            value={ cardAttr1 }
           />
         </lebel>
         <br />
@@ -40,6 +43,7 @@ class Input extends React.Component {
           <input
             type="number"
             data-testid="attr2-input"
+            value={ cardAttr2 }
           />
         </lebel>
         <br />
@@ -48,6 +52,7 @@ class Input extends React.Component {
           <input
             type="number"
             data-testid="attr3-input"
+            value={ cardAttr3 }
           />
         </lebel>
         <br />
@@ -56,6 +61,7 @@ class Input extends React.Component {
           <input
             type="text"
             data-testid="image-input"
+            value={ cardImage }
           />
         </lebel>
         <br />
@@ -64,6 +70,7 @@ class Input extends React.Component {
           <select
             type="select"
             data-testid="rare-input"
+            value={ cardRare }
           >
             <option>normal</option>
             <option>raro</option>
@@ -76,11 +83,14 @@ class Input extends React.Component {
           <input
             type="checkbox"
             data-testid="trunfo-input"
+            value={ cardTrunfo }
           />
         </lebel>
         <button
           type="button"
           data-testid="save-button"
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
         >
           Salvar
         </button>
@@ -88,5 +98,21 @@ class Input extends React.Component {
     );
   }
 }
+
+Input.propTypes = {
+  data: PropTypes.shape({
+    cardName: PropTypes.string.isRequired,
+    cardDescription: PropTypes.string.isRequired,
+    cardAttr1: PropTypes.string.isRequired,
+    cardAttr2: PropTypes.string.isRequired,
+    cardAttr3: PropTypes.string.isRequired,
+    cardImage: PropTypes.string.isRequired,
+    cardRare: PropTypes.string.isRequired,
+    cardTrunfo: PropTypes.bool.isRequired,
+    isSaveButtonDisabled: PropTypes.bool.isRequired,
+    onInputChange: PropTypes.func.isRequired,
+    onSaveButtonClick: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Input;

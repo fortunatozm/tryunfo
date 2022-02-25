@@ -1,5 +1,4 @@
 import React from 'react';
-// import Input from './Input';
 import Nome from './inputs/Nome';
 import Descricao from './inputs/Descricao';
 import Atributo1 from './inputs/Atributo1';
