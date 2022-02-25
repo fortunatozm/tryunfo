@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Strunfo extends React.Component {
   render() {
@@ -13,10 +14,18 @@ class Strunfo extends React.Component {
           data-testid="trunfo-input"
           checked={ cardTrunfo }
           onChange={ onInputChange }
+          name="cardTrunfo"
         />
       </lebel>
     );
   }
 }
+
+Strunfo.propTypes = {
+  data: PropTypes.shape({
+    cardTrunfo: PropTypes.bool.isRequired,
+    onInputChange: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Strunfo;

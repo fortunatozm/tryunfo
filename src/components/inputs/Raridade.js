@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Raridade extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class Raridade extends React.Component {
           data-testid="rare-input"
           value={ cardRare }
           onChange={ onInputChange }
+          name="cardRare"
         >
           <option>normal</option>
           <option>raro</option>
@@ -22,5 +24,12 @@ class Raridade extends React.Component {
     );
   }
 }
+
+Raridade.propTypes = {
+  data: PropTypes.shape({
+    cardRare: PropTypes.string.isRequired,
+    onInputChange: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Raridade;

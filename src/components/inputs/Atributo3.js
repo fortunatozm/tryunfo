@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Atributo3 extends React.Component {
   render() {
@@ -12,10 +13,18 @@ class Atributo3 extends React.Component {
           data-testid="attr3-input"
           value={ cardAttr3 }
           onChange={ onInputChange }
+          name="cardAttr3"
         />
       </lebel>
     );
   }
 }
+
+Atributo3.propTypes = {
+  data: PropTypes.shape({
+    cardAttr3: PropTypes.string.isRequired,
+    onInputChange: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Atributo3;
