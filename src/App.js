@@ -83,12 +83,12 @@ class App extends React.Component {
       cardAttr3: 0,
       cardTrunfo: false,
     });
-    // console.log(this.state.data);
   }
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
       cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled } = this.state;
+    const { data } = this.state ;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -116,6 +116,21 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        {
+          data.map((dado) => (
+            <Card
+              key={ dado.cardName }
+              cardName={ dado.cardName }
+              cardDescription={ dado.cardDescription }
+              cardAttr1={ dado.cardAttr1 }
+              cardAttr2={ dado.cardAttr2 }
+              cardAttr3={ dado.cardAttr3 }
+              cardImage={ dado.cardImage }
+              cardRare={ dado.cardRare }
+              cardTrunfo={ dado.cardTrunfo }
+            />
+          ))
+        }
       </div>
     );
   }
