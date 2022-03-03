@@ -8,15 +8,15 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
-      data: [],
+      dataVector: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -71,9 +71,7 @@ class App extends React.Component {
       cardAttr3,
       cardTrunfo };
     this.setState((prevState) => ({
-      data: [...prevState.data, newCard],
-    }));
-    this.setState({
+      dataVector: [...prevState.dataVector, newCard],
       cardName: '',
       cardDescription: '',
       cardImage: '',
@@ -82,13 +80,28 @@ class App extends React.Component {
       cardAttr2: 0,
       cardAttr3: 0,
       cardTrunfo: false,
+    }), () => {
+      const { dataVector } = this.state;
+      const result = dataVector.some((dado) => dado.cardTrunfo === true);
+      if (result === false) {
+        this.setState({
+          hasTrunfo: false,
+        });
+      } else {
+        this.setState({
+          hasTrunfo: true,
+        });
+      }
     });
+    // this.setState({
+    // });
   }
 
   render() {
     const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
       cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled } = this.state;
-    const { data } = this.state;
+    const { dataVector } = this.state;
+    // console.log(dataVector);
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -117,9 +130,9 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
         />
         {
-          data.map((dado) => (
+          dataVector.map((dado, index) => (
             <Card
-              key={ dado.cardName }
+              key={ index }
               cardName={ dado.cardName }
               cardDescription={ dado.cardDescription }
               cardAttr1={ dado.cardAttr1 }

@@ -22,7 +22,7 @@ class Atributo3 extends React.Component {
 
 Atributo3.propTypes = {
   data: PropTypes.shape({
-    cardAttr3: PropTypes.number.isRequired,
+    cardAttr3: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
   }).isRequired,
 };
