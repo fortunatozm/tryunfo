@@ -7,7 +7,7 @@ class Atributo2 extends React.Component {
     // console.log(cardName);
 
     return (
-      <lebel>
+      <label htmlFor="attr2">
         Atributo2:
         <input
           type="number"
@@ -15,8 +15,9 @@ class Atributo2 extends React.Component {
           value={ cardAttr2 }
           onChange={ onInputChange }
           name="cardAttr2"
+          id="attr2"
         />
-      </lebel>
+      </label>
     );
   }
 }

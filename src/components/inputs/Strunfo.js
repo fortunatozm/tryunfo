@@ -10,7 +10,7 @@ class Strunfo extends React.Component {
       txt = <span>Você já tem um Super Trunfo em seu baralho</span>;
     } else {
       txt = (
-        <label htmlFor="input">
+        <label htmlFor="strunfo">
           Super Trunfo
           <input
             type="checkbox"
@@ -19,7 +19,7 @@ class Strunfo extends React.Component {
             checked={ cardTrunfo }
             onChange={ onInputChange }
             name="cardTrunfo"
-            id="input"
+            id="strunfo"
           />
         </label>);
     }

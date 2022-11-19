@@ -7,7 +7,7 @@ class Raridade extends React.Component {
     // console.log(cardName);
 
     return (
-      <lebel>
+      <label htmlFor="raridade">
         Raridade:
         <select
           type="select"
@@ -15,12 +15,13 @@ class Raridade extends React.Component {
           value={ cardRare }
           onChange={ onInputChange }
           name="cardRare"
+          id="raridade"
         >
           <option>normal</option>
           <option>raro</option>
           <option>muito raro</option>
         </select>
-      </lebel>
+      </label>
     );
   }
 }

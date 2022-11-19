@@ -7,7 +7,7 @@ class Descricao extends React.Component {
     // console.log(cardName);
 
     return (
-      <lebel>
+      <label htmlFor="descricao">
         Descrição:
         <input
           type="textarea"
@@ -15,8 +15,9 @@ class Descricao extends React.Component {
           value={ cardDescription }
           onChange={ onInputChange }
           name="cardDescription"
+          id="descricao"
         />
-      </lebel>
+      </label>
     );
   }
 }

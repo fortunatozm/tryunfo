@@ -7,7 +7,7 @@ class Nome extends React.Component {
     // console.log(cardName);
 
     return (
-      <lebel>
+      <label htmlFor="nome">
         Nome:
         <input
           type="text"
@@ -15,8 +15,9 @@ class Nome extends React.Component {
           value={ cardName }
           onChange={ onInputChange }
           name="cardName"
+          id="nome"
         />
-      </lebel>
+      </label>
     );
   }
 }

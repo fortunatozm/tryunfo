@@ -10,82 +10,90 @@ class Input extends React.Component {
 
     return (
       <form>
-        <lebel>
+        <label htmlFor="nome">
           Nome:
           <input
             type="text"
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
+            id="nome"
           />
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <label htmlFor="descricao">
           Descrição:
           <input
             type="textarea"
             data-testid="description-input"
             value={ cardDescription }
+            id="descricao"
           />
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <label htmlFor="attr1">
           Atributo1:
           <input
             type="number"
             data-testid="attr1-input"
             value={ cardAttr1 }
+            id="attr1"
           />
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <lebel htmlFor="attr2">
           Atributo2:
           <input
             type="number"
             data-testid="attr2-input"
             value={ cardAttr2 }
+            id="attr2"
           />
         </lebel>
         <br />
-        <lebel>
+        <label htmlFor="attr3">
           Atributo3:
           <input
             type="number"
             data-testid="attr3-input"
             value={ cardAttr3 }
+            id="attr3"
           />
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <label htmlFor="imagem">
           Imagem:
           <input
             type="text"
             data-testid="image-input"
             value={ cardImage }
+            id="imagem"
           />
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <label htmlFor="raridade">
           Raridade:
           <select
             type="select"
             data-testid="rare-input"
             value={ cardRare }
+            id="raridade"
           >
             <option>normal</option>
             <option>raro</option>
             <option>muito raro</option>
           </select>
-        </lebel>
+        </label>
         <br />
-        <lebel>
+        <label htmlFor="strunfo">
           Super Trunfo:
           <input
             type="checkbox"
             data-testid="trunfo-input"
             value={ cardTrunfo }
+            id="strunfo"
           />
-        </lebel>
+        </label>
         <button
           type="button"
           data-testid="save-button"

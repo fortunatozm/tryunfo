@@ -7,7 +7,7 @@ class Imagem extends React.Component {
     // console.log(cardName);
 
     return (
-      <lebel>
+      <label htmlFor="imagem">
         Imagem:
         <input
           type="text"
@@ -15,8 +15,9 @@ class Imagem extends React.Component {
           value={ cardImage }
           onChange={ onInputChange }
           name="cardImage"
+          id="imagem"
         />
-      </lebel>
+      </label>
     );
   }
 }
